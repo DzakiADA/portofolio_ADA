@@ -1,16 +1,18 @@
-// Scroll ke bagian tertentu
+// Scroll ke bagian tertentu dengan animasi halus
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
-// Reveal on scroll effect
+// Animasi muncul saat scroll
 window.addEventListener('scroll', () => {
-  const reveals = document.querySelectorAll('.animate');
+  const elements = document.querySelectorAll('.animate');
   const triggerBottom = window.innerHeight * 0.8;
 
-  reveals.forEach(el => {
+  elements.forEach(el => {
     const boxTop = el.getBoundingClientRect().top;
-
     if (boxTop < triggerBottom) {
       el.classList.add('show');
     } else {
@@ -19,37 +21,48 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Handle form submit supaya buka WhatsApp dan tidak reload
-const form = document.getElementById('contactForm');
-const successMsg = document.getElementById('formSuccess');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name = encodeURIComponent(form.querySelector('input[type="text"]').value.trim());
-  const email = encodeURIComponent(form.querySelector('input[type="email"]').value.trim());
-  const message = encodeURIComponent(form.querySelector('textarea').value.trim());
-
-  if (!name || !email || !message) {
-    alert('Mohon isi semua field terlebih dahulu.');
-    return;
-  }
-
-  const phoneNumber = '085732162064'; // Ganti nomor WA kamu di sini
-  const text = `Halo Dzaki,%0A%0ASaya ingin menghubungi Anda dengan detail berikut:%0A- Nama: ${name}%0A- Email: ${email}%0A- Pesan: ${message}`;
-
-  const waUrl = `https://wa.me/${phoneNumber}?text=${text}`;
-  window.open(waUrl, '_blank');
-
-  form.reset();
-  successMsg.style.display = 'block';
-
-  setTimeout(() => {
-    successMsg.style.display = 'none';
-  }, 3000);
-});
-
+// Toggle menu (untuk tampilan mobile)
 function toggleMenu() {
   const navLinks = document.getElementById('navLinks');
   navLinks.classList.toggle('active');
+}
+
+// Tutup menu saat link diklik (khusus mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+
+// Form kontak - kirim ke WhatsApp
+const form = document.getElementById('contactForm');
+const successMsg = document.getElementById('formSuccess');
+
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = encodeURIComponent(form.querySelector('input[type="text"]').value.trim());
+    const email = encodeURIComponent(form.querySelector('input[type="email"]').value.trim());
+    const message = encodeURIComponent(form.querySelector('textarea').value.trim());
+
+    if (!name || !email || !message) {
+      alert('Mohon isi semua field terlebih dahulu.');
+      return;
+    }
+
+    const phoneNumber = '6285732162064'; // Gunakan format internasional
+    const waMessage = `Halo Dzaki,%0A%0ASaya ingin menghubungi Anda dengan detail berikut:%0A- Nama: ${name}%0A- Email: ${email}%0A- Pesan: ${message}`;
+    const waURL = `https://wa.me/${phoneNumber}?text=${waMessage}`;
+
+    window.open(waURL, '_blank');
+
+    form.reset();
+    if (successMsg) {
+      successMsg.style.display = 'block';
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 3000);
+    }
+  });
 }
