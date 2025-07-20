@@ -60,8 +60,11 @@ a {
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
     url('https://images.unsplash.com/photo-1600369671507-992d75b3e4c5?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
   background-attachment: fixed;
-  ...
+  color: #fff;
+  padding: 120px 30px;
+  text-align: center;
 }
+
 
 .hero-text span {
   color: #00eaff;
