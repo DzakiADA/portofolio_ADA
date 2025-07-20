@@ -6,11 +6,11 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0d0d0d;
-  color: #eaeaea;
-  line-height: 1.6;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at 50% 50%, #0d0d0d, #000000 80%);
+  background-attachment: fixed;
 }
+
 
 a {
   text-decoration: none;
@@ -211,5 +211,43 @@ footer {
 .about-content .illustration {
   width: 180px;
   opacity: 0.9;
+}
+
+h1.hero-text {
+  font-size: 48px;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #ff2e63;
+}
+
+.highlight {
+  color: #ff2e63;
+  text-shadow: 0 0 8px #ff2e63;
+}
+
+.hero button {
+  background-color: #ff2e63;
+  box-shadow: 0 0 10px #ff2e63, 0 0 20px #ff2e63;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #ff0050;
+  box-shadow: 0 0 15px #ff2e63, 0 0 30px #ff2e63;
+}
+
+.logo {
+  animation: flicker 2s infinite alternate;
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
 }
 
