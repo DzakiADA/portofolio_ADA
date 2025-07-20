@@ -43,6 +43,14 @@ a {
     0 0 10px #00eaff,
     0 0 20px #00eaff;
 }
+.nav-links {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+.nav-links.active {
+  max-height: 500px; /* atau max-height dinamis sesuai js */
+}
 
 .nav-links {
   list-style: none;
