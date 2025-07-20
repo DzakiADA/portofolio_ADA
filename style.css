@@ -279,10 +279,9 @@ footer {
   font-weight: bold;
   color: #fff;
   background-color: #25D366;
-  border: none;
   border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -290,3 +289,4 @@ footer {
   background-color: #1ebe57;
   transform: scale(1.05);
 }
+
