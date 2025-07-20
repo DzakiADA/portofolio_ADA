@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dzaki Adani - Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header -->
- <header class="header">
-  <div class="logo">DzakiDev</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#beranda">Beranda</a></li>
-    <li><a href="#tentang">Tentang</a></li>
-    <li><a href="#layanan">Layanan</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-  </ul>
-</header>
+  <header class="header">
+    <div class="logo">Dzaki_ADA</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </header>
 
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <!-- Hero / Beranda -->
+  <section id="beranda" class="hero">
     <div class="hero-content">
       <img src="profile.png" alt="Foto Profil Dzaki" class="profile-pic" />
       <h1 class="hero-text">Halo, Saya <span class="highlight">Dzaki</span></h1>
       <p class="subtext">Mahasiswa Informatika | Web Developer | UI/UX Enthusiast</p>
-      <button onclick="scrollToSection('about')">Lihat Selengkapnya</button>
+      <button onclick="scrollToSection('tentang')">Lihat Selengkapnya</button>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about animate">
+  <!-- Tentang -->
+  <section id="tentang" class="about animate">
     <h2>Tentang Saya</h2>
     <div class="about-content">
-      
       <p>Saya adalah mahasiswa jurusan Informatika dengan minat besar dalam pengembangan web dan desain antarmuka. Saya aktif dalam proyek kolaboratif dan suka membangun hal-hal kreatif secara digital.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="services animate">
+  <!-- Keahlian -->
+  <section id="keahlian" class="services animate">
     <h2>Keahlian</h2>
     <div class="cards">
       <div class="card animate">
@@ -63,8 +62,8 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="services animate">
+  <!-- Proyek -->
+  <section id="proyek" class="services animate">
     <h2>Proyek Saya</h2>
     <div class="cards">
       <div class="card animate">
@@ -85,23 +84,52 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact animate">
-  <h2>Kontak Saya</h2>
-  <p>Ingin terhubung? Klik tombol di bawah untuk mengirim pesan lewat WhatsApp.</p>
-  <a href="https://wa.me/6285732162064" target="_blank" rel="noopener" class="wa-button">
-    Hubungi via WhatsApp
-  </a>
-</section>
-
-
-
+  <!-- Kontak -->
+  <section id="kontak" class="contact animate">
+    <h2>Kontak Saya</h2>
+    <p>Ingin terhubung? Klik tombol di bawah untuk mengirim pesan lewat WhatsApp.</p>
+    <a href="https://wa.me/6285732162064" target="_blank" rel="noopener" class="wa-button">
+      Hubungi via WhatsApp
+    </a>
+  </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Dzaki Adani. Dibuat dengan ❤️ dan kode.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Reveal on scroll effect
+    window.addEventListener('scroll', () => {
+      const reveals = document.querySelectorAll('.animate');
+      const triggerBottom = window.innerHeight * 0.8;
+
+      reveals.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          el.classList.add('show');
+        } else {
+          el.classList.remove('show');
+        }
+      });
+    });
+
+    // Auto-close menu when link clicked (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
