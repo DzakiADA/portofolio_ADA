@@ -253,3 +253,21 @@ footer {
   width: 180px;
   opacity: 0.9;
 }
+.contact-number {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #25d366; /* warna hijau WhatsApp */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.contact-number:hover {
+  background-color: #1ebe57;
+}
+
