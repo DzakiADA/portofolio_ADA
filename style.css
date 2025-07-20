@@ -68,8 +68,12 @@ a {
 /* ==================== HERO SECTION ==================== */
 .hero {
   background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('https://wallpapercave.com/wp/wp12477460.jpg') no-repeat center center/cover;
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url('bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 120px 30px;
+  text-align: center;
 }
 
 h1.hero-text {
