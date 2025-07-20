@@ -1,3 +1,4 @@
+/* ==================== RESET & BASE ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +10,17 @@ body {
   font-family: 'Orbitron', sans-serif;
   background: radial-gradient(circle at 50% 50%, #0d0d0d, #000000 80%);
   background-attachment: fixed;
+  color: #eaeaea;
+  line-height: 1.6;
 }
-
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+
+/* ==================== HEADER ==================== */
 .header {
   background-color: #111;
   padding: 20px 40px;
@@ -34,6 +38,11 @@ a {
   font-weight: bold;
   color: #00eaff;
   text-shadow: 1px 1px 10px #00eaff;
+  animation: flicker 2s infinite alternate;
+  text-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff;
 }
 
 .nav-links {
@@ -55,25 +64,34 @@ a {
   color: #ff2e63;
 }
 
+
+/* ==================== HERO SECTION ==================== */
 .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
     url('https://images.unsplash.com/photo-1600369671507-992d75b3e4c5?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
   background-attachment: fixed;
+  min-height: 100vh;
   color: #fff;
   padding: 120px 30px;
   text-align: center;
 }
 
+h1.hero-text {
+  font-size: 48px;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #ff2e63;
+}
 
-.hero-text span {
-  color: #00eaff;
+.hero-text span,
+.highlight {
+  color: #ff2e63;
+  text-shadow: 0 0 8px #ff2e63;
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
   from { text-shadow: 0 0 10px #00eaff; }
-  to { text-shadow: 0 0 20px #ff2e63; }
+  to   { text-shadow: 0 0 20px #ff2e63; }
 }
 
 .hero button {
@@ -85,13 +103,17 @@ a {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #ff2e63, 0 0 20px #ff2e63;
+  transition: all 0.3s ease;
 }
 
 .hero button:hover {
-  background-color: #e6004c;
+  background-color: #ff0050;
+  box-shadow: 0 0 15px #ff2e63, 0 0 30px #ff2e63;
 }
 
+
+/* ==================== SECTIONS ==================== */
 section {
   padding: 60px 30px;
   text-align: center;
@@ -108,6 +130,8 @@ h2 {
   font-size: 30px;
 }
 
+
+/* ==================== CARDS ==================== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -122,8 +146,8 @@ h2 {
   border-radius: 15px;
   width: 260px;
   box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
   color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
@@ -131,6 +155,8 @@ h2 {
   box-shadow: 0 6px 20px rgba(255, 46, 99, 0.5);
 }
 
+
+/* ==================== ANIMATION ==================== */
 .animate {
   opacity: 0;
   transform: translateY(50px);
@@ -142,6 +168,13 @@ h2 {
   transform: translateY(0);
 }
 
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+
+/* ==================== FORM ==================== */
 form {
   display: flex;
   flex-direction: column;
@@ -149,7 +182,8 @@ form {
   margin-top: 20px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 70%;
   padding: 12px;
   margin-bottom: 15px;
@@ -180,6 +214,8 @@ form button:hover {
   background-color: #00c0d4;
 }
 
+
+/* ==================== FOOTER ==================== */
 footer {
   background-color: #111;
   color: #999;
@@ -188,6 +224,8 @@ footer {
   border-top: 1px solid #222;
 }
 
+
+/* ==================== IMAGE STYLES ==================== */
 .profile-pic {
   width: 160px;
   height: 160px;
@@ -215,42 +253,3 @@ footer {
   width: 180px;
   opacity: 0.9;
 }
-
-h1.hero-text {
-  font-size: 48px;
-  text-shadow: 0 0 10px #00eaff, 0 0 20px #ff2e63;
-}
-
-.highlight {
-  color: #ff2e63;
-  text-shadow: 0 0 8px #ff2e63;
-}
-
-.hero button {
-  background-color: #ff2e63;
-  box-shadow: 0 0 10px #ff2e63, 0 0 20px #ff2e63;
-  transition: all 0.3s ease;
-}
-
-.hero button:hover {
-  background-color: #ff0050;
-  box-shadow: 0 0 15px #ff2e63, 0 0 30px #ff2e63;
-}
-
-.logo {
-  animation: flicker 2s infinite alternate;
-  text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff,
-    0 0 20px #00eaff;
-}
-
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.4;
-  }
-}
-
