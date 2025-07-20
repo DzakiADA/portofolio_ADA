@@ -27,17 +27,16 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: #00eaff;
-  text-shadow: 1px 1px 10px #00eaff;
   animation: flicker 2s infinite alternate;
   text-shadow:
     0 0 5px #00eaff,
@@ -67,17 +66,16 @@ a {
 
 /* ==================== HERO SECTION ==================== */
 .hero {
-  background: 
+  background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url('bg.jpg') no-repeat center center/cover;
+    url('bg.jpg') no-repeat center center / cover;
   background-attachment: fixed;
-  color: #fff;
   padding: 120px 30px;
+  color: #fff;
   text-align: center;
 }
 
-
-h1.hero-text {
+.hero h1.hero-text {
   font-size: 48px;
   text-shadow: 0 0 10px #00eaff, 0 0 20px #ff2e63;
 }
@@ -119,15 +117,17 @@ section {
   text-align: center;
 }
 
-.about, .services, .contact {
+.about,
+.services,
+.contact {
   background-color: #1a1a1a;
   border-top: 2px solid #222;
 }
 
 h2 {
-  color: #00eaff;
-  margin-bottom: 25px;
   font-size: 30px;
+  margin-bottom: 25px;
+  color: #00eaff;
 }
 
 
@@ -142,11 +142,11 @@ h2 {
 
 .card {
   background-color: #111;
+  width: 260px;
   padding: 25px;
   border-radius: 15px;
-  width: 260px;
-  box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
   color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -187,11 +187,11 @@ form textarea {
   width: 70%;
   padding: 12px;
   margin-bottom: 15px;
+  font-size: 14px;
   border: none;
   border-radius: 8px;
   background-color: #262626;
   color: #fff;
-  font-size: 14px;
 }
 
 form textarea {
@@ -200,12 +200,12 @@ form textarea {
 }
 
 form button {
-  background-color: #00eaff;
-  border: none;
-  color: #000;
   padding: 10px 30px;
-  border-radius: 20px;
   font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  background-color: #00eaff;
+  color: #000;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -225,7 +225,7 @@ footer {
 }
 
 
-/* ==================== IMAGE STYLES ==================== */
+/* ==================== IMAGE & ICON STYLES ==================== */
 .profile-pic {
   width: 160px;
   height: 160px;
@@ -253,24 +253,10 @@ footer {
   width: 180px;
   opacity: 0.9;
 }
-.contact-number {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background-color: #25d366; /* warna hijau WhatsApp */
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
-  transition: background-color 0.3s ease;
-}
 
-.contact-number:hover {
-  background-color: #1ebe57;
-}
 
+/* ==================== WHATSAPP BUTTON ==================== */
+.contact-number,
 .wa-button {
   display: inline-block;
   margin-top: 20px;
@@ -278,17 +264,20 @@ footer {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #25D366;
+  background-color: #25d366;
   border-radius: 30px;
   text-decoration: none;
   box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.contact-number:hover,
 .wa-button:hover {
   background-color: #1ebe57;
   transform: scale(1.05);
 }
+
+
 /* ==================== RESPONSIVE ==================== */
 .menu-toggle {
   display: none;
@@ -302,28 +291,6 @@ footer {
     display: block;
   }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    background-color: #111;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    display: none;
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-
-
-@media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -334,10 +301,20 @@ footer {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    background-color: #111;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-links li {
     margin: 10px 0;
+    text-align: center;
   }
 
   .hero h1.hero-text {
@@ -379,15 +356,14 @@ footer {
     font-size: 24px;
   }
 
+  form button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
   .wa-button,
   .contact-number {
     font-size: 16px;
     padding: 12px 20px;
   }
-
-  form button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
 }
-
