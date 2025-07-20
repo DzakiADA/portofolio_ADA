@@ -6,8 +6,23 @@ function scrollToSection(id) {
   }
 }
 
-// Animasi muncul saat scroll
-window.addEventListener('scroll', () => {
+// Animasi muncul saat scroll dengan debounce untuk performa
+function debounce(func, wait = 20, immediate = true) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+window.addEventListener('scroll', debounce(() => {
   const elements = document.querySelectorAll('.animate');
   const triggerBottom = window.innerHeight * 0.8;
 
@@ -19,7 +34,7 @@ window.addEventListener('scroll', () => {
       el.classList.remove('show');
     }
   });
-});
+}));
 
 // Toggle menu (untuk tampilan mobile)
 function toggleMenu() {
