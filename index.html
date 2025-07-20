@@ -88,15 +88,15 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact animate">
-    <h2>Kontak Saya</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Nama Anda" required />
-      <input type="email" placeholder="Email Anda" required />
-      <textarea placeholder="Pesan Anda..." required></textarea>
-      <button type="submit">Kirim Pesan</button>
-    </form>
-    <p id="formSuccess" style="margin-top:15px; color:#00eaff; display:none;">Pesan berhasil dikirim!</p>
-  </section>
+  <h2>Kontak Saya</h2>
+  <form id="contactForm" onsubmit="return false;">
+    <input type="text" id="name" placeholder="Nama Anda" required />
+    <input type="email" id="email" placeholder="Email Anda" required />
+    <textarea id="message" placeholder="Pesan Anda..." required></textarea>
+    <button type="button" id="sendBtn">Kirim Pesan</button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer>
