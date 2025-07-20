@@ -271,3 +271,22 @@ footer {
   background-color: #1ebe57;
 }
 
+.wa-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #25D366;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wa-button:hover {
+  background-color: #1ebe57;
+  transform: scale(1.05);
+}
