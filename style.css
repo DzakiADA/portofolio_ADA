@@ -290,6 +290,39 @@ footer {
   transform: scale(1.05);
 }
 /* ==================== RESPONSIVE ==================== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background-color: #111;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
