@@ -289,4 +289,72 @@ footer {
   background-color: #1ebe57;
   transform: scale(1.05);
 }
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hero h1.hero-text {
+    font-size: 32px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  form input,
+  form textarea {
+    width: 90%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .wa-button,
+  .contact-number {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1.hero-text {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .wa-button,
+  .contact-number {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  form button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
 
